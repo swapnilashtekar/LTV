@@ -4,7 +4,6 @@ import logging
 from dateutil.parser import parse
 from dateutil import rrule
 
-
 """
 Logging
 """
@@ -162,7 +161,11 @@ if __name__ == '__main__':
     ltv.read_file(input_file, database_dict)
 
     logger.debug("Database dict after ingestion is: {0}".format(database_dict))
-    x = 50
+
+    """
+    Top 10 Customers for LTV
+    """
+    x = 10
     results = ltv.TopXSimpleLTVCustomers(x, database_dict)
 
     """
